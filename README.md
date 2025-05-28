@@ -10,3 +10,5 @@
 Esta versión ha sido desarrollada para navegador, utilizando **HTML5 Canvas** para la lógica del juego y **HTML** para una interfaz de usuario más elaborada.
 
 El diseño integra colores vibrantes y un estilo visual más pulido, buscando una experiencia moderna sin perder la esencia retro del original. Pensado para jugarse en pantalla horizontal, el proyecto explora tanto la jugabilidad clásica como la mejora en la presentación y usabilidad.
+
+Me he basado para la esgtructura de secuencialidad en el curso CS50x Game Development.
