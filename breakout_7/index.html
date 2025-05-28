@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>JS-Blockade</title>
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <section id="left">
+        <div id="menu">
+            <h1>MENU</h1>
+            <button id="startButton">START</button>
+            <button id="resetButton">RESET</button>
+            <p id="vidasText">Vidas: <span id="vidasValue">3</span></p>
+        </div>
+        <div class="logo">
+        </div>
+    </section>
+
+    <section id="center">
+        <div class="canvas-wrapper">
+            <div id="inicioState">
+                <h1>BIENVENIDO A JS-BLOCKADE</h1>
+                <p>Presiona el botón START<br>para iniciar.</p>                
+            </div>
+            <div id="seleccionarBarraState">
+                <h1>Selecciona el color de tu barra</h1>
+                <div id="barraColor">
+                    <button id="color1" class="colorButton"></button>
+                    <button id="color2" class="colorButton"></button>
+                    <button id="color3" class="colorButton"></button>
+                    <button id="color4" class="colorButton"></button>
+                </div>
+            </div>
+            <div id="gameOverState">
+                <h1>¡GAME OVER!</h1>
+                <p>Tu puntuación es:</p>
+                <p id="finalScore">000</p>
+                <p>Presiona el botón RESET<br>para reiniciar el juego.</p>
+            </div>
+            <div id="servirState">
+                <h1>¡A JUGAR!</h1>
+                <p>Presiona la tecla espacio</br>para iniciar el juego.</p>            
+                <p>Mueves la barra con</br>las flechas derecha e izquierda</p>
+            </div>
+            <div id="revivirState">
+                <h1>¡NO TE RINDAS!</h1>
+                <p>Presiona la tecla espacio</br>para continuar el juego.</p>
+            </div>
+            <canvas id="game" width="700" height="1000"></canvas>
+        </div>
+    </section>
+    <section id="right">
+        <div id="score">
+            <p>SCORE</p>
+            <p id="scoreValue">000</p>
+        </div>
+        <div id="highscore">
+            <p>HIGH SCORES</p>
+            <p id="highscoreValue">000</p>
+        </div>
+    </section>
+
+    <!-- <footer>
+        <p>©2025 Rafael Oseguera.</p>
+    </footer> -->
+
+    <script type="module" src="JS/main.js"></script>
+</body>
+
+</html>

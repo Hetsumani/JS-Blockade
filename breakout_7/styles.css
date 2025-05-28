@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap');
+
+.tektur-default {
+  font-family: "Tektur", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 26.56fr 46.88fr 26.56fr;
+    background-color: #09001a;
+    padding: 3.704%;
+    margin: 0;
+    font-family: "Tektur", sans-serif;
+    color: white;
+}
+
+#left {
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    justify-items: end;
+    height: 100%;
+}
+
+#menu::before {
+    content: "";
+    position: absolute;
+    top: -0.25rem;
+    left: -0.25rem;
+    right: -0.25rem;
+    bottom: -0.25rem;
+    border: inherit;
+    filter: blur(8px);
+    z-index: -1;
+}
+
+#menu {
+    position: relative;
+    border-color: #ff42ff;
+    border-style: solid;
+    border-width: 0.15625rem;
+    height: 100%;
+    width: 75%;
+
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+
+
+    color: #02fdfe;
+    font-size: 1.75rem;
+}
+
+button{    
+    color: #02fdfe;
+    background-color: #09001a;
+    border: 0.15625rem solid #ff42ff;
+    
+    padding: 0.5rem 1rem;
+
+    font-family: "Tektur", sans-serif;
+    font-size: 1.75rem;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease-in-out;
+    text-align: left;
+}
+
+button:hover {
+    background-color: #ff42ff;
+    color: #09001a;
+    transform: scale(1.05);
+}
+
+button:active{
+  transform: scale(0.9);   /* se “hunde” un poco */
+  background:#ff42ff;
+  box-shadow: 0 0 6px #ff42ff;
+}
+
+.logo {
+    background-image: url("assets/images/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;    
+    background-position: right;
+    width: 85%;
+    height: auto;
+}
+
+#center {
+    display: flex;
+    /* centra el canvas en la celda */
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.canvas-wrapper {
+    /*  hará de marco y punto de referencia  */
+    position: relative;
+    display: inline-block;
+    /* o flex/grid según tu layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.canvas-wrapper::before {
+    content: "";
+    position: absolute;
+    top: -0.25rem;
+    left: -0.25rem;
+    right: -0.25rem;
+    bottom: -0.25rem;
+    border: 0.15625rem solid #02fdfe;
+    /* mismo color que el borde real */
+    filter: blur(8px);
+    /* “glow” */
+    z-index: -1;
+    /* queda detrás del lienzo */
+}
+
+canvas {
+    display: block;
+    /* quita espacio blanco extra */
+    width: 700px;
+    height: 1000px;
+
+    max-height: 83vh;
+    /* tope vertical que querías */
+    width: auto;
+    aspect-ratio: 700/1000;
+
+    border: 0.15625rem solid #02fdfe;
+
+    /* pixelado */
+    image-rendering: pixelated;
+}
+
+#inicioState {
+    position: absolute;
+    display: flex;    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#seleccionarBarraState {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#color1{
+    background-color: #5b6ee1;
+    border: 0.15625rem solid #5b6ee1;
+}
+
+#color2{
+    background-color: #6abe30;
+    border: 0.15625rem solid #6abe30;
+}
+
+#color3{
+    background-color: #ac3232;
+    border: 0.15625rem solid #ac3232;
+}
+
+#color4{
+    background-color: #76428a;
+    border: 0.15625rem solid #76428a;
+}
+
+#servirState{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#servirState p {
+    margin-bottom: .5rem;
+}
+
+#gameOverState {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#revivirState{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#vidasText{
+    display: none;
+}
+
+#right {
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    justify-items: start;
+    height: 100%;
+}
+
+#score, #highscore {
+    position: relative;
+    width: 75%;
+    height: 100%;
+    border-color: #fd9000;
+    border-style: solid;
+    border-width: 0.15625rem;
+}
+
+#score::before, #highscore::before {
+    content: "";
+    position: absolute;
+    top: -0.25rem;
+    left: -0.25rem;
+    right: -0.25rem;
+    bottom: -0.25rem;
+    border: inherit;
+    filter: blur(8px);
+    z-index: -1;
+}
+
+#score{   
+    color: #fd9000;
+    font-size: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#highscore{
+    color: #02fdfe;
+    font-size: 3rem;
+    display: flex;
+    flex-direction: column;        
+    align-items: center;
+}
+
+p{
+    margin: 0;
+}
+
+/* --------------- MEDIA QUERIES ------------------ */
+@media (max-width: 1368px){
+    #menu {
+        font-size: 1.25rem;
+    }
+
+    #score, #highscore {
+        font-size: 2rem;
+    }    
+}

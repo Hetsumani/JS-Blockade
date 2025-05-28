@@ -1,6 +1,32 @@
+/*
+    Frontend II
+    JS-Blockade
+
+    Blockade-3
+    "The Ball Update"
+
+    -- Programa Principal --
+
+    Autor: Rafael Getsemani Oseguera Marroquín
+    rafael.oseguera@cesunbc.edu.mx
+
+    Basado en Arkanoid, lanzado originalmente por Taito en 1986, 
+    que es un clásico juego de romper bloques donde el jugador 
+    controla una paleta para hacer rebotar una bola y destruir 
+    todos los bloques del nivel.
+
+    Esta versión ha sido desarrollada para navegador, utilizando 
+    HTML5 Canvas para la lógica del juego y HTML para una interfaz 
+    de usuario más elaborada. El diseño integra colores vibrantes y 
+    un estilo visual más pulido, buscando una experiencia moderna 
+    sin perder la esencia retro del original. Pensado para jugarse 
+    en pantalla horizontal, el proyecto explora tanto la jugabilidad 
+    clásica como la mejora en la presentación y usabilidad.    
+*/
 import { drawGrid } from "./drawGrid.js";
 import { Bloque } from "./bloque.js";
 import { Jugador } from "./jugador.js";
+import { Bola } from "./bola.js";
 
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
@@ -14,6 +40,7 @@ const fila = 0;
 const columna = 0;
 const escala = 2.5;
 const velocidadJugador = 350;
+const velocidadBola = 300;
 
 const bloque = new Bloque(
     spriteSheet,
@@ -26,7 +53,10 @@ const bloque = new Bloque(
     escala
 );
 
+// Creamos el jugador
 const jugador = new Jugador(spriteSheet, 32, 64, 64, 16, 286, 800, 64, 16, velocidadJugador);
+
+const bola = new Bola(spriteSheet, 12, 6, 342, 784, 8, 8, 2, velocidadBola);
 
 let teclas = [];
 
@@ -50,6 +80,7 @@ function update(dt) {
     }
 
     jugador.update(dt);
+    bola.update(dt);
 }
 
 function draw() {
@@ -60,6 +91,7 @@ function draw() {
     drawGrid(canvas, ctx);
     bloque.dibujar(ctx);
     jugador.dibujar(ctx);
+    bola.dibujar(ctx);
 }
 
 let tiempoInicial = 0;

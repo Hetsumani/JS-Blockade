@@ -6,7 +6,7 @@
   font-weight: bold;
   font-style: normal;
   font-variation-settings:
-    "wdth" 100;
+    "wdth" 100; 
 }
 
 body {
@@ -49,8 +49,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: 0 1rem;
-
-
+    
     color: #02fdfe;
     font-size: 1.75rem;
 }
