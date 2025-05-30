@@ -26,8 +26,11 @@
 import { StateMachine } from "./StateMachine/stateMachine.js";
 import { InicioState } from "./StateMachine/inicioState.js";
 
+
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
+
+
 
 // Inicializamos el estado de la máquina de estados
 const sm = new StateMachine();

@@ -46,10 +46,10 @@ export class JugarState extends BaseState {
         if (this.bola.vidas <= 0) {
             console.log("La bola ha perdido todas sus vidas.");
             // Cambiar al estado de Game Over
-            this.sm.change(new GameOverState(this.sm));
+            this.sm.change(new GameOverState(this.sm, this.score));
             return; // Salir del update para evitar más lógica si la bola ha perdido
         } else {
-            this.sm.change(new RevivirState(this.sm, this.jugador, this.bola, this.bloques, this.spriteSheet, this.filaColor, this.nivel));
+            this.sm.change(new RevivirState(this.sm, this.jugador, this.bola, this.bloques, this.spriteSheet, this.filaColor, this.nivel, this.score));
         }
     }
 
